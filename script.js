@@ -60,14 +60,25 @@ function carregarTema(){
 // console.log(carregarTema());
 
 //Alterar tema
-function alternarTema(){
-    const temaAtual = localStorage.getItem("tema") || "claro";
-    const novoTema = temaAtual === "claro" ? "dark" : "claro";
+// function alternarTema(){
+//     const temaAtual = localStorage.getItem("tema") || "claro";
+//     const novoTema = temaAtual === "claro" ? "dark" : "claro";
 
-    document.body.classList.remove(`tema-${temaAtual}`);
-    document.body.classList.add(`tema-${novoTema}`);
-    localStorage.setItem("tema", novoTema);
-}
-//Usar
-alternarTema("dark");
-console.log(carregarTema());
+//     document.body.classList.remove(`tema-${temaAtual}`);
+//     document.body.classList.add(`tema-${novoTema}`);
+//     localStorage.setItem("tema", novoTema);
+// }
+// //Usar
+// alternarTema("dark");
+// console.log(carregarTema());
+
+
+//Errado (perde a estrutura)
+const usuario = { nome: "Pateta", idade: 30, cidade: "São Paulo" };
+localStorage.setItem("usuario", usuario);
+console.log(localStorage.getItem("usuario")); // [object Object]
+//Certo (usar JSON)
+const usuarioJSON = JSON.stringify(usuario);
+localStorage.setItem("usuario", usuarioJSON);
+const dados = JSON.parse()
+console.log(usuarioRecuperado);
