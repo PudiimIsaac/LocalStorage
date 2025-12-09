@@ -75,10 +75,9 @@ function carregarTema(){
 
 //Errado (perde a estrutura)
 const usuario = { nome: "Pateta", idade: 30, cidade: "São Paulo" };
-localStorage.setItem("usuario", usuario);
-console.log(localStorage.getItem("usuario")); // [object Object]
+// localStorage.setItem("usuario", usuario);
+// console.log(localStorage.getItem("usuario")); // [object Object]
 //Certo (usar JSON)
-const usuarioJSON = JSON.stringify(usuario);
-localStorage.setItem("usuario", usuarioJSON);
-const dados = JSON.parse()
-console.log(usuarioRecuperado);
+localStorage.setItem("usuario", JSON.stringify(usuario));
+const dados = JSON.parse(localStorage.getItem("usuario"));
+console.log(dados.nome);
